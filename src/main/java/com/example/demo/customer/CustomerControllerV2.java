@@ -3,6 +3,7 @@ package com.example.demo.customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -27,7 +28,7 @@ public class CustomerControllerV2 {
     }
 
     @PostMapping
-    void createNewCustomer(@RequestBody Customer customer){
+    void createNewCustomer(@RequestBody @Valid Customer customer){
         System.out.println("UPDATE REQUEST...");
         System.out.println(customer);
     }
