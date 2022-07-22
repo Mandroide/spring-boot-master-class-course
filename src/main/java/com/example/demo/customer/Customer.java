@@ -2,19 +2,28 @@ package com.example.demo.customer;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
+@Entity
+@Table
 class Customer {
-    private final Long id;
+    @Id
+    private Long id;
     @NotBlank(message = "Name must be not blank")
-    private final String name;
+    private String name;
     @NotBlank(message = "Password must be not blank")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private final String password;
+    private String password;
 
     @Email(message = "email must be valid")
-    private final String email;
+    private String email;
+
+    public Customer() {
+    }
 
     Customer(Long id, String name, String password, String email) {
         this.id = id;

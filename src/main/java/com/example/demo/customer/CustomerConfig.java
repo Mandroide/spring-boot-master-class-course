@@ -13,14 +13,12 @@ public class CustomerConfig {
 
     @Bean
     CommandLineRunner commandLineRunner(){
-        return args -> {
-            System.out.println("Command line runner hooray");
-        };
+        return args -> System.out.println("Command line runner hooray");
     }
 
     @Bean
     CustomerRepo customerRepo(){
         System.out.println("useFakeCustomerRepo = " + useFakeCustomerRepo);
-        return useFakeCustomerRepo ? new CustomerFakeRepository() : new CustomerRepository();
+        return new CustomerFakeRepository();
     }
 }
