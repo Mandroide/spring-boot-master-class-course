@@ -11,7 +11,6 @@ import java.time.ZonedDateTime;
 
 @ControllerAdvice
 public class ApiExceptionHandler {
-    private final static Logger LOGGER = LoggerFactory.getLogger(ApiExceptionHandler.class);
 
     //@ExceptionHandler(value = {}) # Multiple exceptions
     @ExceptionHandler(value = ApiRequestException.class)

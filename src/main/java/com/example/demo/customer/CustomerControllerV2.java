@@ -9,14 +9,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v2/customers")
+@lombok.AllArgsConstructor
 public class CustomerControllerV2 {
     private final CustomerService service;
-
-
-    @Autowired
-    public CustomerControllerV2(CustomerService service) {
-        this.service = service;
-    }
 
     @GetMapping
     List<Customer> getCustomers(){
